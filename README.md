@@ -49,7 +49,7 @@ This component interacts with LDAP v3.
 
 Apache-2.0 © [Elastic.io GmbH](elastic.io)
 
-[travis-image]: https://travis-ci.org/elasticio/sugarcrm-component.svg?branch=master
-[travis-url]: https://travis-ci.org/elasticio/sugarcrm-component
-[daviddm-image]: https://david-dm.org/elasticio/sugarcrm-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/elasticio/sugarcrm-component
+[travis-image]: https://travis-ci.org/elasticio/ldap-component.svg?branch=master
+[travis-url]: https://travis-ci.org/elasticio/ldap-component
+[daviddm-image]: https://david-dm.org/elasticio/ldap-component.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/elasticio/ldap-component
