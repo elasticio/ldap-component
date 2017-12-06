@@ -2,8 +2,8 @@
 'use strict';
 
 const {expect} = require('chai');
-const TestEmitter = require('./TestEmitter');
 const fs = require('fs');
+const sinon = require('sinon');
 
 const search = require('../lib/actions/search');
 const verifyCredentials = require('../verifyCredentials');
@@ -14,6 +14,7 @@ describe('Integration Test', function () {
   let password;
   let base;
   let cfg;
+  let emitter;
 
   this.timeout(10000);
   before(function () {
@@ -33,11 +34,14 @@ describe('Integration Test', function () {
       user,
       password
     };
+
+    emitter = {
+      emit: sinon.spy()
+    };
   });
 
   describe('Search Tests', function () {
     it('All Data In One Page', async function () {
-      const emitter = new TestEmitter();
       const msg = {
         body: {
           filter: '(objectclass=*)',
@@ -47,7 +51,7 @@ describe('Integration Test', function () {
       };
       await search.process.call(emitter, msg, cfg, null);
 
-      expect(emitter.data.length).to.be.equal(4);
+      expect(emitter.emit.withArgs('data').callCount).to.be.equal(4);
     });
   });
 
