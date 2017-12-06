@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "pretest": "eslint verifyCredentials.js lib spec-integration --fix",
-    "test": "mocha spec-integration"
+    "test": "echo 'Currently, there are no unit tests.  Run \"npm run integration-test\" to run integration tests.'",
+    "integration-test": "mocha spec-integration"
   },
   "engines": {
     "node": "8"
