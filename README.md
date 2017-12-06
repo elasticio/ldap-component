@@ -1,4 +1,6 @@
-# ldap-component [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# ldap-component 
+[![Travis Build Status][travis-image]][travis-url]
+[![DependencyStatus][daviddm-image]][daviddm-url]
 
 LDAP component for the [elastic.io platform](http://www.elastic.io)
 
@@ -47,10 +49,7 @@ This component interacts with LDAP v3.
 
 Apache-2.0 © [Elastic.io GmbH](elastic.io)
 
-
-[npm-image]: https://badge.fury.io/js/ldap-component.svg
-[npm-url]: https://npmjs.org/package/ldap-component
-[travis-image]: https://travis-ci.org//ldap-component.svg?branch=master
-[travis-url]: https://travis-ci.org//ldap-component
-[daviddm-image]: https://david-dm.org//ldap-component.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org//ldap-component
+[travis-image]: https://travis-ci.org/elasticio/sugarcrm-component.svg?branch=master
+[travis-url]: https://travis-ci.org/elasticio/sugarcrm-component
+[daviddm-image]: https://david-dm.org/elasticio/sugarcrm-component.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/elasticio/sugarcrm-component

@@ -12,9 +12,8 @@
     "lib"
   ],
   "scripts": {
-    "pretest": "eslint verifyCredentials.js lib spec spec-integration --fix",
-    "test": "mocha spec",
-    "integration-test": "mocha spec-integration"
+    "pretest": "eslint verifyCredentials.js lib spec-integration --fix",
+    "test": "mocha spec-integration"
   },
   "engines": {
     "node": "8"
