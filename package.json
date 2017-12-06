@@ -1,0 +1,51 @@
+{
+  "name": "ldap-component",
+  "version": "1.0.0",
+  "description": "Elastic.io Connector for LDAP",
+  "homepage": "",
+  "author": {
+    "name": "Elastic.io GmbH",
+    "email": "dev@elastic.io",
+    "url": "elastic.io"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "pretest": "eslint verifyCredentials.js lib spec-integration --fix",
+    "test": "mocha spec-integration"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "keywords": [
+    "elasticio",
+    "ldap",
+    "connector",
+    "adapter",
+    "elasticio-component"
+  ],
+  "dependencies": {
+    "elasticio-node": "0.0.8",
+    "elasticio-sailor-nodejs": "^2.2.1",
+    "promised-ldap": "^0.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.12.1",
+    "eslint-config-sinon": "^1.0.3",
+    "eslint-config-xo-space": "^0.17.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "mocha": "^4.0.1",
+    "sinon": "^4.1.2"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "/ldap-component",
+  "license": "Apache-2.0"
+}

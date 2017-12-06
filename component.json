@@ -1,0 +1,64 @@
+{
+  "title": "LDAP",
+  "description": "Lightweight Directory Access Protocol is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network. Directory services play an important role in developing intranet and Internet applications by allowing the sharing of information about users, systems, networks, services, and applications throughout the network.  See https://github.com/elasticio/ldap-component for more documenation.",
+  "credentials": {
+    "fields": {
+      "url": {
+        "label": "LDAP URL",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "note": "The url for the LDAP instance to connect to including the port, hostname and protocol (ldap vs ldaps)",
+        "placeholder": "ldap://server.example.com:389"
+      },
+      "user": {
+        "label": "LDAP User",
+        "required": true,
+        "viewClass": "TextFieldView",
+        "note": "The username to authenticate as",
+        "placeholder": "uid=exampleUser,ou=user,dc=example,dc=com"
+      },
+      "password": {
+        "label": "LDAP password",
+        "required": true,
+        "viewClass": "PasswordFieldView"
+      }
+    }
+  },
+  "actions": {
+    "search": {
+      "title": "Perform LDAP search action",
+      "main": "./lib/actions/search.js",
+      "description": "Performs an LDAP search",
+      "fields": {},
+      "metadata": {
+        "in": {
+          "type": "object",
+          "properties": {
+            "base": {
+              "title": "Base",
+              "type": "string",
+              "required": true,
+              "placeholder": "dc=com",
+              "note": "Root object in the directory for the search"
+            },
+            "filter": {
+              "title": "Filter",
+              "type": "string",
+              "required": true,
+              "placeholder": "(objectclass=*)",
+              "note": "See https://www.ldap.com/ldap-filters for more information about LDAP filters"
+            },
+            "scope": {
+              "title": "Search Scope",
+              "type": "string",
+              "required": true,
+              "enum": ["base", "one", "sub"],
+              "placeholder": "base",
+              "note": "See https://www.ldap.com/the-ldap-search-operation for more information about search scopes"
+            }
+          }
+        }
+      }
+    }
+  }
+}
