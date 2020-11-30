@@ -58,13 +58,13 @@ describe('Integration Test', () => {
 
   describe('Verify Credentials Tests', () => {
     it('Valid Credentials', async () => {
-      const verificationResult = await verifyCredentials(cfg);
+      const verificationResult = await verifyCredentials.call(emitter, cfg);
       expect(verificationResult).to.be.true;
     });
 
     it('Invalid Credentials', async () => {
       cfg.password = 'some wrong password';
-      const verificationResult = await verifyCredentials(cfg);
+      const verificationResult = await verifyCredentials.call(emitter, cfg);
       expect(verificationResult).to.be.false;
     });
   });

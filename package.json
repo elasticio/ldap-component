@@ -27,12 +27,12 @@
     "elasticio-component"
   ],
   "dependencies": {
-    "@elastic.io/component-logger": "0.0.1",
     "elasticio-node": "0.0.9",
     "elasticio-sailor-nodejs": "2.6.19",
     "promised-ldap": "0.3.0"
   },
   "devDependencies": {
+    "@elastic.io/component-logger": "0.0.1",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "dotenv": "5.0.0",
