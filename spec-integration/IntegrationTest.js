@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-expressions */
-'use strict';
+/* eslint-disable no-unused-expressions, import/no-extraneous-dependencies */
 
-const {expect} = require('chai');
+const logger = require('@elastic.io/component-logger')();
+const { expect } = require('chai');
 const fs = require('fs');
 const sinon = require('sinon');
 
 const search = require('../lib/actions/search');
 const verifyCredentials = require('../verifyCredentials');
 
-describe('Integration Test', function () {
+describe('Integration Test', () => {
   let url;
   let user;
   let password;
@@ -16,9 +16,9 @@ describe('Integration Test', function () {
   let cfg;
   let emitter;
 
-  this.timeout(10000);
-  before(function () {
+  before(() => {
     if (fs.existsSync('.env')) {
+      // eslint-disable-next-line global-require
       require('dotenv').config();
     }
 
@@ -28,40 +28,41 @@ describe('Integration Test', function () {
     base = process.env.BASE;
   });
 
-  beforeEach(function () {
+  beforeEach(() => {
     cfg = {
       url,
       user,
-      password
+      password,
     };
 
     emitter = {
-      emit: sinon.spy()
+      logger,
+      emit: sinon.spy(),
     };
   });
 
-  describe('Search Tests', function () {
-    it('All Data In One Page', async function () {
+  describe('Search Tests', async () => {
+    it('All Data In One Page', async () => {
       const msg = {
         body: {
           filter: '(objectclass=*)',
           scope: 'one',
-          base
-        }
+          base,
+        },
       };
       await search.process.call(emitter, msg, cfg, null);
 
-      expect(emitter.emit.withArgs('data').callCount).to.be.equal(4);
+      expect(emitter.emit.withArgs('data').callCount).to.be.equal(21);
     });
   });
 
-  describe('Verify Credentials Tests', function () {
-    it('Valid Credentials', async function () {
+  describe('Verify Credentials Tests', () => {
+    it('Valid Credentials', async () => {
       const verificationResult = await verifyCredentials(cfg);
       expect(verificationResult).to.be.true;
     });
 
-    it('Invalid Credentials', async function () {
+    it('Invalid Credentials', async () => {
       cfg.password = 'some wrong password';
       const verificationResult = await verifyCredentials(cfg);
       expect(verificationResult).to.be.false;
