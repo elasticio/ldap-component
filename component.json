@@ -33,7 +33,7 @@
       "help" : {
         "description": "Performs an LDAP search",
         "link": "/components/ldap/index.html#search"
-      }
+      },
       "fields": {},
       "metadata": {
         "in": {
