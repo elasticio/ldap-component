@@ -1,17 +1,15 @@
-'use strict';
-
-const {createClient} = require('./lib/baseClient');
+const { createClient } = require('./lib/baseClient');
 
 module.exports = async function (cfg) {
   try {
-    const client = await createClient(cfg);
-    console.log('Bind successful. Attempting to unbind...');
-    await client.unbind();
-    console.log('Unbind successful.');
+    const client = await createClient.call(this, cfg);
+    this.logger.info('Bind successful. Attempting to unbind...');
+    client.unbind();
+    this.logger.info('Unbind successful. Credentials successfully verified');
     return true;
   } catch (e) {
     // Workaround for https://github.com/elasticio/sailor-nodejs/issues/58
-    console.log(`Exception: ${e.toString()} \n ${e.stack}`);
+    this.logger.error('Credentials verification failed!');
     return false;
   }
 };

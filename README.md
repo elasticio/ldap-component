@@ -1,6 +1,5 @@
+[![CircleCI](https://circleci.com/gh/elasticio/ldap-component.svg?style=svg)](https://circleci.com/gh/elasticio/ldap-component)
 # ldap-component 
-[![Travis Build Status][travis-image]][travis-url]
-[![DependencyStatus][daviddm-image]][daviddm-url]
 
 LDAP component for the [elastic.io platform](http://www.elastic.io)
 
