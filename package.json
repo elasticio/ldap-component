@@ -1,6 +1,6 @@
 {
   "name": "ldap-component",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Elastic.io Connector for LDAP",
   "homepage": "",
   "author": {
@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "elasticio-node": "0.0.9",
-    "elasticio-sailor-nodejs": "2.6.19",
+    "elasticio-sailor-nodejs": "2.6.24",
     "promised-ldap": "0.3.0"
   },
   "devDependencies": {
