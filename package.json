@@ -1,6 +1,5 @@
 {
   "name": "ldap-component",
-  "version": "1.0.2",
   "description": "Elastic.io Connector for LDAP",
   "homepage": "",
   "author": {
